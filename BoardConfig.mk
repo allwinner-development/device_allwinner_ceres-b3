@@ -23,6 +23,41 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
 TARGET_NO_BOOTLOADER := true
 
+# Boot Image
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0xfffffffffff88100
+BOARD_RAMDISK_OFFSET := 0x02f88000
+BOARD_DTB_OFFSET := 0x03f88000
+
+BOARD_BOOTIMG_HEADER_VERSION := 2
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 # Minimal
+BOARD_KERNEL_CMDLINE += earlyprintk=sunxi-uart,0x05000000
+BOARD_KERNEL_CMDLINE += root=/dev/mmcblk0p4 # Minimal
+BOARD_KERNEL_CMDLINE += init=/init # Minimal
+BOARD_KERNEL_CMDLINE += loglevel=7
+BOARD_KERNEL_CMDLINE += androidboot.hardware=sun50iw10p1 # Minimal
+BOARD_KERNEL_CMDLINE += androidboot.serialno=5c000c68a3034951e5d
+BOARD_KERNEL_CMDLINE += androidboot.boot_type=2
+BOARD_KERNEL_CMDLINE += androidboot.mode=normal
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive # Minimal
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/etc/firmware
+BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=0,1,2
+BOARD_KERNEL_CMDLINE += car_reverse_config=1
+# BOARD_KERNEL_CMDLINE += cma=64M Remove comment when display breaks
+
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --board ""
+
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := kernel
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
