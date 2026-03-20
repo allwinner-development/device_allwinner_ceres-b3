@@ -97,6 +97,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 TARGET_BOARD_PLATFORM := ceres
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.sun50iw10p1
+
 # Verified Boot
 BOARD_AVB_ENABLE := false
 

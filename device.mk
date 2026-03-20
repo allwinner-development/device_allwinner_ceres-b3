@@ -20,6 +20,10 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.sun50iw10p1
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

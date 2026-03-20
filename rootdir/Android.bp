@@ -1,0 +1,12 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "fstab.sun50iw10p1",
+    src: "etc/fstab.sun50iw10p1",
+    vendor: true,
+    ramdisk_available: true,
+}
