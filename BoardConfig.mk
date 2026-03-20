@@ -91,5 +91,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 TARGET_BOARD_PLATFORM := ceres
 
+# Verified Boot
+BOARD_AVB_ENABLE := false
+
 # Inherit the proprietary files
 include vendor/allwinner/ceres/BoardConfigVendor.mk
