@@ -47,6 +47,7 @@ BOARD_KERNEL_CMDLINE += androidboot.serialno=5c000c68a3034951e5d
 BOARD_KERNEL_CMDLINE += androidboot.boot_type=2
 BOARD_KERNEL_CMDLINE += androidboot.mode=normal
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive # Minimal
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/etc/firmware
 BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=0,1,2
 BOARD_KERNEL_CMDLINE += car_reverse_config=1
