@@ -99,6 +99,8 @@ TARGET_BOARD_PLATFORM := ceres
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.sun50iw10p1
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := false
